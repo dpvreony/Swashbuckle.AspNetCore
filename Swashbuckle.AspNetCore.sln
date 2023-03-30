@@ -67,6 +67,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore21", "test\WebSites\NetCore21\NetCore21.csproj", "{E46D07EE-5EA6-4630-8FD2-B2150F35D33A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NswagClientExample", "test\WebSites\NswagClientExample\NswagClientExample.csproj", "{8CA201CD-7F59-4B7D-8888-76528F2DF3C8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3164424E-D74A-45CD-BE17-BE33ED79C090} = {3164424E-D74A-45CD-BE17-BE33ED79C090}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OAuth2Integration", "test\WebSites\OAuth2Integration\OAuth2Integration.csproj", "{0DA4F00E-D365-4D27-B8C4-F6D4577F2093}"
 EndProject

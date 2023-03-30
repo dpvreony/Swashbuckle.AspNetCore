@@ -9,6 +9,7 @@ using Microsoft.OpenApi.Writers;
 using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Hosting;
 
 namespace Swashbuckle.AspNetCore.Cli
@@ -138,6 +139,11 @@ namespace Swashbuckle.AspNetCore.Cli
             if (TryGetCustomHost(startupAssembly, "SwaggerWebHostFactory", "CreateWebHost", out IWebHost webHost))
             {
                 return webHost.Services;
+            }
+
+            if (TryGetCustomHost(startupAssembly, "SwaggerWebHostBuilderFactory", "CreateWebHostBuilder", out IWebHostBuilder webHostBuilder))
+            {
+                return new TestServer(webHostBuilder).Host.Services;
             }
 
             try
